@@ -31,6 +31,7 @@ public class WebActivity extends AppCompatActivity {
                 .putExtra(KEY.TITLE, title)
                 .putExtra(KEY.COLOR, color));
     }
+
     public static void start(Context context, String uri, String title) {
         context.startActivity(new Intent(context, WebActivity.class)
                 .putExtra(KEY.URI, uri)
@@ -45,7 +46,7 @@ public class WebActivity extends AppCompatActivity {
         title = findViewById(R.id.title);
         web = findViewById(R.id.web);
         if (Build.VERSION.SDK_INT >= 19) {
-            StatusBarCompat.setStatusBarColor(this, Color.parseColor("#4288FB"));
+            StatusBarCompat.setStatusBarColor(this, getResources().getColor(R.color.life_lay_blue));
         }
         if (getIntent().hasExtra(KEY.TITLE)) {
             title.setText(getIntent().getStringExtra(KEY.TITLE));
@@ -54,7 +55,10 @@ public class WebActivity extends AppCompatActivity {
             web.loadUrl(getIntent().getStringExtra(KEY.URI));
         }
         if (getIntent().hasExtra(KEY.COLOR)) {
-            title.setBackgroundResource(getIntent().getIntExtra(KEY.COLOR, R.color.app_style));
+            title.setBackgroundResource(getIntent().getIntExtra(KEY.COLOR, R.color.life_lay_blue));
+            if (Build.VERSION.SDK_INT >= 19) {
+                StatusBarCompat.setStatusBarColor(this, getResources().getColor(R.color.life_lay_blue));
+            }
         }
     }
 

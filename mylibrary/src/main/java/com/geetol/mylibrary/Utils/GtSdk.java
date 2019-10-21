@@ -102,6 +102,7 @@ public class GtSdk {
             case "com.xindihe.watercamera":
             case "com.xindihe.zgjt2":
                 api = "xindihe.xindihe.cn";
+                ys_user_address_k = "pub";
                 break;
             case "com.geetol.sleep"://集拓信息
                 api = "xinxi.gtxinxi.cn";

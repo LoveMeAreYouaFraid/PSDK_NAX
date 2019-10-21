@@ -31,6 +31,12 @@ public class WebActivity extends AppCompatActivity {
                 .putExtra(KEY.TITLE, title)
                 .putExtra(KEY.COLOR, color));
     }
+    public static void start(Context context, String uri, String title) {
+        context.startActivity(new Intent(context, WebActivity.class)
+                .putExtra(KEY.URI, uri)
+                .setFlags(FLAG_ACTIVITY_NEW_TASK)
+                .putExtra(KEY.TITLE, title));
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

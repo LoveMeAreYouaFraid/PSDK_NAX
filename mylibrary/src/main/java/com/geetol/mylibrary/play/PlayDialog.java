@@ -59,12 +59,12 @@ public class PlayDialog {
                 AppDataModel.getInstance().getGds() != null &&
                 AppDataModel.getInstance().getGds().size() > 0) {
 
-            if (AppDataModel.getInstance().getGds().get(0).getPayway().equals("[1]")) {//微信
+            if (AppDataModel.getInstance().getGds().get(vipId).getPayway().equals("[1]")) {//微信
                 wxPlay(context, vipId);
-            } else if (AppDataModel.getInstance().getGds().get(0).getPayway().equals("[2]")) {//支付宝
+            } else if (AppDataModel.getInstance().getGds().get(vipId).getPayway().equals("[2]")) {//支付宝
                 pay(AppDataModel.getInstance().getGds().get(vipId).getGid(), context);
-            } else if (AppDataModel.getInstance().getGds().get(0).getPayway().contains("[1]")
-                    && AppDataModel.getInstance().getGds().get(0).getPayway().contains("[2]")) {
+            } else if (AppDataModel.getInstance().getGds().get(vipId).getPayway().contains("[1]")
+                    && AppDataModel.getInstance().getGds().get(vipId).getPayway().contains("[2]")) {
                 Dialog dialog = new Dialog(context, R.style.dialog_custom);
                 dialog.setContentView(lay);
                 Objects.requireNonNull(dialog.getWindow()).setGravity(Gravity.BOTTOM);

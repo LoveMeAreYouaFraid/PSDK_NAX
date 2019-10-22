@@ -33,7 +33,7 @@ public class GtSdk {
                 ys_user_address_k = "dj";
                 break;
 
-            case " com.ziyi18.wxxh"://紫伊
+            case "com.ziyi18.wxxh"://紫伊
             case "com.ziyi18.shortvideo":
             case "com.ziyi.watercamera":
             case "com.gtdev5.call_flash4":
